@@ -1,0 +1,214 @@
+# frozen_string_literal: true
+
+require 'checksum'
+
+# Invoice correspond to a single purchase made by an user. This purchase may
+# include reservation(s) and/or a subscription
+class Invoice < ActiveRecord::Base
+  include NotifyWith::NotificationAttachedObject
+  require 'fileutils'
+  scope :only_invoice, -> { where(type: nil) }
+  belongs_to :invoiced, polymorphic: true
+
+  has_many :invoice_items, dependent: :destroy
+  accepts_nested_attributes_for :invoice_items
+  belongs_to :invoicing_profile
+  belongs_to :statistic_profile
+  belongs_to :wallet_transaction
+  belongs_to :coupon
+
+  belongs_to :subscription, foreign_type: 'Subscription', foreign_key: 'invoiced_id'
+  belongs_to :reservation, foreign_type: 'Reservation', foreign_key: 'invoiced_id'
+  belongs_to :offer_day, foreign_type: 'OfferDay', foreign_key: 'invoiced_id'
+
+  has_one :avoir, class_name: 'Invoice', foreign_key: :invoice_id, dependent: :destroy
+  belongs_to :operator_profile, foreign_key: :operator_profile_id, class_name: 'InvoicingProfile'
+
+  before_create :add_environment
+  after_create :update_reference, :chain_record
+  after_commit :generate_and_send_invoice, on: [:create], if: :persisted?
+  after_update :log_changes
+
+  validates_with ClosedPeriodValidator
+
+  def file
+    dir = "invoices/#{invoicing_profile.id}"
+
+    # create directories if they doesn't exists (invoice & invoicing_profile_id)
+    FileUtils.mkdir_p dir
+    "#{dir}/#{filename}"
+  end
+
+  def filename
+    "#{ENV['INVOICE_PREFIX']}-#{id}_#{created_at.strftime('%d%m%Y')}.pdf"
+  end
+
+  def user
+    invoicing_profile.user
+  end
+
+  def generate_reference
+    self.reference = InvoiceReferenceService.generate_reference(self)
+  end
+
+  def update_reference
+    generate_reference
+    save
+  end
+
+  def order_number
+    InvoiceReferenceService.generate_order_number(self)
+  end
+
+  # for debug & used by rake task "fablab:maintenance:regenerate_invoices"
+  def regenerate_invoice_pdf
+    pdf = ::PDF::Invoice.new(self, subscription&.expiration_date).render
+    File.binwrite(file, pdf)
+  end
+
+  def build_avoir(attrs = {})
+    raise Exception if refunded? == true || prevent_refund?
+
+    avoir = Avoir.new(dup.attributes)
+    avoir.type = 'Avoir'
+    avoir.attributes = attrs
+    avoir.reference = nil
+    avoir.invoice_id = id
+    # override created_at to compute CA in stats
+    avoir.created_at = avoir.avoir_date
+    avoir.total = 0
+    # refunds of invoices with cash coupons: we need to ventilate coupons on paid items
+    paid_items = 0
+    refund_items = 0
+    invoice_items.each do |ii|
+      paid_items += 1 unless ii.amount.zero?
+      next unless attrs[:invoice_items_ids].include? ii.id # list of items to refund (partial refunds)
+      raise Exception if ii.invoice_item # cannot refund an item that was already refunded
+
+      refund_items += 1 unless ii.amount.zero?
+      avoir_ii = avoir.invoice_items.build(ii.dup.attributes)
+      avoir_ii.created_at = avoir.avoir_date
+      avoir_ii.invoice_item_id = ii.id
+      avoir.total += avoir_ii.amount
+    end
+    # handle coupon
+    unless avoir.coupon_id.nil?
+      discount = avoir.total
+      if avoir.coupon.type == 'percent_off'
+        discount = avoir.total * avoir.coupon.percent_off / 100.0
+      elsif avoir.coupon.type == 'amount_off'
+        discount = (avoir.coupon.amount_off / paid_items) * refund_items
+      else
+        raise InvalidCouponError
+      end
+      avoir.total -= discount
+    end
+    avoir
+  end
+
+  def subscription_invoice?
+    invoice_items.each do |ii|
+      return true if ii.subscription
+    end
+    false
+  end
+
+  ##
+  # Test if the current invoice has been refund, totally or partially.
+  # @return {Boolean|'partial'}, true means fully refund, false means not refunded
+  ##
+  def refunded?
+    if avoir
+      invoice_items.each do |item|
+        return 'partial' unless item.invoice_item
+      end
+      true
+    else
+      false
+    end
+  end
+
+  ##
+  # Check if the current invoice is about a training that was previously validated for the concerned user.
+  # In that case refunding the invoice shouldn't be allowed.
+  # Moreover, an invoice cannot be refunded if the users' account was deleted
+  # @return {Boolean}
+  ##
+  def prevent_refund?
+    return true if user.nil?
+
+    if invoiced_type == 'Reservation' && invoiced.reservable_type == 'Training'
+      user.trainings.include?(invoiced.reservable_id)
+    else
+      false
+    end
+  end
+
+  # get amount total paid
+  def amount_paid
+    total - (wallet_amount || 0)
+  end
+
+  # return a summary of the payment means used
+  def payment_means
+    res = []
+    res.push(means: :wallet, amount: wallet_amount) if wallet_transaction && wallet_amount.positive?
+    if paid_with_stripe?
+      res.push(means: :card, amount: amount_paid)
+    else
+      res.push(means: :other, amount: amount_paid)
+    end
+    res
+  end
+
+  def add_environment
+    self.environment = Rails.env
+  end
+
+  def chain_record
+    self.footprint = compute_footprint
+    save!
+  end
+
+  def check_footprint
+    invoice_items.map(&:check_footprint).all? && footprint == compute_footprint
+  end
+
+  def set_wallet_transaction(amount, transaction_id)
+    raise InvalidFootprintError unless check_footprint
+
+    update_columns(wallet_amount: amount, wallet_transaction_id: transaction_id)
+    chain_record
+  end
+
+  def paid_with_stripe?
+    stp_payment_intent_id? || stp_invoice_id? || payment_method == 'stripe'
+  end
+
+  private
+
+  def generate_and_send_invoice
+    return if Rails.application.secrets.fablab_without_invoices == 'true'
+
+    unless Rails.env.test?
+      puts "Creating an InvoiceWorker job to generate the following invoice: id(#{id}), invoiced_id(#{invoiced_id}), " \
+           "invoiced_type(#{invoiced_type}), user_id(#{invoicing_profile.user_id})"
+    end
+    InvoiceWorker.perform_async(id, user&.subscription&.expired_at)
+  end
+
+  def compute_footprint
+    FootprintService.compute_footprint(Invoice, self)
+  end
+
+  def log_changes
+    return if Rails.env.test?
+    return unless changed?
+
+    puts "WARNING: Invoice update triggered [ id: #{id}, reference: #{reference} ]"
+    puts '----------   changes   ----------'
+    puts changes
+    puts '---------------------------------'
+  end
+
+end

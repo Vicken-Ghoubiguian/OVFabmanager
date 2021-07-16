@@ -1,0 +1,64 @@
+<section class="m-lg">
+  <div class="row">
+    <div class="col-md-13">
+      <table class="table">
+        <thead>
+          <tr>
+            <th style="width:10%">
+                <a class="ng-binding" href="" ng-click="">
+                        {{ 'basket_number' | translate }}
+                </a>
+            </th>
+            <th style="width:10%">
+		<a class="ng-binding" href="" ng-click="">
+			{{ 'customer' | translate }}
+                </a>
+	    </th>
+            <th style="width:10%">
+		<a class="ng-binding" href="" ng-click="">
+			{{ 'list_of_articles' | translate }}
+                </a>
+	    </th>
+            <th style="width:10%">
+		<a class="ng-binding" href="" ng-click="">
+			{{ 'date_and_time_of_borrowing' | translate }}
+                </a>
+	    </th>
+            <th style="width:10%">
+		<a class="ng-binding" href="" ng-click="">
+			{{ 'return_date' | translate }}
+                </a>
+	    </th>
+	    <th style="width:10%">
+                <a class="ng-binding" href="" ng-click="">
+                        {{ 'status' | translate }}
+                </a>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <!--<tr ng-repeat="member in members">
+            <td>
+              <span class="pull-left thumb-sm avatar m-r">
+                <fab-user-avatar ng-model="member.profile.user_avatar" avatar-class="thumb-38"></fab-user-avatar>
+              </span>
+            </td>
+            <td class="text-c">{{ member.name }}</td>
+            <td class="text-u-c text-sm">{{ member.username }}</td>
+            <td>{{ member.email }}</td>
+            <td>
+              <div class="buttons">
+                <button class="btn btn-default" ui-sref="app.logged.members_show({id: member.slug})">
+                  <i class="fa fa-eye"></i> {{ 'consult' | translate }}
+                </button>
+              </div>
+            </td>
+          </tr>-->
+        </tbody>
+      </table>
+      <div class="text-center">
+        <button class="btn btn-warning" ng-click="" ng-hide="noMoreResults"><i class="fa fa-search-plus" aria-hidden="true"></i> {{ 'display_more_baskets' | translate }}</button>
+      </div>
+      <p ng-if="items.length == 0" translate>{{ 'no_items_for_now' }}</p>
+    </div>
+</section>

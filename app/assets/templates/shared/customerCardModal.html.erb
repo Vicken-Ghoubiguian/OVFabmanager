@@ -1,0 +1,36 @@
+<div class="" id="customerCardModal">
+  <div class="modal-header">
+    <h1 translate>
+      {{ 'customIdentificationByCard' }}
+    </h1>
+  </div>
+  <div class="modal-body">
+    <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</uib-alert>
+
+    <div class="panel panel-default bg-light">
+        <div class="panel-body">
+          <form name="customerCardForm" class="form-horizontal" ng-keydown="customerCardForm.$valid && $event.which == 13 && identifyCustomerCard()">
+	    <div class="form-group">
+              <div class="col-sm-12">
+                <div class="input-group">
+                  <span class="input-group-addon">
+                    <i class="fa fa-barcode"></i>
+                  </span>
+                  <input type="text"
+                         name="customer_barcode"
+                         class="form-control"
+                         ng-model="customer_barcode"
+                         required="required"
+                         ng-minlength="1"
+                         placeholder="{{ 'customer_card_barcode' | translate }}" />
+                </div>
+              </div>
+            </div>
+	  </form>
+	</div>
+	<div class="panel-footer no-padder">
+          <button class="btn btn-valid btn-warning btn-block p-l btn-lg text-u-c r-b" ng-click="identifyCustomerCard()" ng-disabled="customerCardForm.$invalid" translate>{{ 'confirm' }}</button>
+        </div>
+    </div>
+  </div>
+</div>

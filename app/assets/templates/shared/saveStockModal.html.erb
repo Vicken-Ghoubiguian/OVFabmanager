@@ -1,0 +1,99 @@
+  <div class="" id="saveStockModal">
+    <div class="modal-header">
+      <h1 translate>
+        {{ 'registration_in_stock' }}
+      </h1>
+    </div>
+    <div class="modal-body">
+      <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</uib-alert>
+
+      <div class="panel panel-default bg-light">
+        <div class="panel-body">
+	  <form name="saveStockForm" class="form-horizontal" ng-keydown="saveStockForm.$valid && $event.which == 13 && saveStock()">
+	    <div class="form-group">
+              <div class="col-sm-12">
+                <div class="input-group">
+                  <span class="input-group-addon">
+                    <i class="fa fa-barcode"></i>
+                  </span>
+                  <input type="text"
+                         name="barcode"
+                         class="form-control"
+			 ng-model="item_barcode"
+                         required="required"
+			 ng-minlength="1"
+                         placeholder="{{ 'item_barcode' | translate }}" />
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-sm-12">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-shopping-cart"></i></span>
+                  <input type="date"
+                         name="shopping_date"
+                         class="form-control"
+			 ng-model="item_shopping_date"
+                         required="required"
+			 onfocus="(this.type='date')"
+			 onblur="(this.type='text')"
+                         placeholder="{{ 'shopping_date' | translate }}"/>
+                </div>
+              </div>
+            </div>
+
+	    <div class="form-group">
+	      <div class="col-sm-12">
+		<div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-truck"></i></span>
+                  <input type="date"
+                         name="delivery_date"
+                         class="form-control"
+			 ng-model="item_delivery_date"
+                         required="required"
+                         onfocus="(this.type='date')"
+                         onblur="(this.type='text')"
+                         placeholder="{{ 'delivery_date' | translate }}"/>
+                </div>
+	      </div>
+	    </div>
+
+	    <div class="form-group">
+              <div class="col-sm-12">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-heartbeat"></i></span>
+                  <input type="number"
+                         name="life_duration"
+                         class="form-control"
+			 ng-model="item_life_duration"
+                         required="required"
+                         placeholder="{{ 'life_duration' | translate }}"/>
+                </div>
+              </div>
+            </div>
+
+	    <div class="form-group">
+              <div class="col-sm-12">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-cubes"></i></span>
+                  <input type="text"
+                         name="type_of_item"
+                         class="form-control"
+			 ng-model="items_type"
+                         required="required"
+                         placeholder="{{ 'type_of_item' | translate }}"/>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="panel-footer no-padder">
+          <button class="btn btn-valid btn-warning btn-block p-l btn-lg text-u-c r-b" ng-click="saveStock()" ng-disabled="saveStockForm.$invalid" translate>{{ 'confirm' }}</button>
+        </div>
+	<div class="panel-footer no-padder">
+	  <button class="btn btn-valid btn-warning btn-block p-l btn-lg text-u-c r-b" ng-click="openRegistrationItem($event)" translate>{{ 'new_item' | translate }}</button>
+	</div>
+      </div>
+    </div>
+  </div>

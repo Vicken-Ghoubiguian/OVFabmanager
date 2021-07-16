@@ -1,0 +1,32 @@
+Metrics/LineLength:
+  Max: 140
+Metrics/MethodLength:
+  Max: 35
+Metrics/CyclomaticComplexity:
+  Max: 13
+Metrics/PerceivedComplexity:
+  Max: 9
+Metrics/AbcSize:
+  Max: 45
+Metrics/ClassLength:
+  Max: 200
+Metrics/BlockLength:
+  Max: 30
+  Exclude:
+    - 'lib/tasks/**/*.rake'
+    - 'config/routes.rb'
+    - 'app/pdfs/pdf/*.rb'
+Metrics/ParameterLists:
+  CountKeywordArgs: false
+Style/BracesAroundHashParameters:
+  EnforcedStyle: context_dependent
+Style/RegexpLiteral:
+  EnforcedStyle: slashes
+Style/EmptyElse:
+  EnforcedStyle: empty
+Style/ClassAndModuleChildren:
+  EnforcedStyle: compact
+Style/AndOr:
+  EnforcedStyle: conditionals
+Style/FormatString:
+  EnforcedStyle: sprintf

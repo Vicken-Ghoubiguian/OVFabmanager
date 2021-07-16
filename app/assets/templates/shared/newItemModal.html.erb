@@ -1,0 +1,192 @@
+  <div>
+    <div class="modal-header">
+      <h1 translate>{{ 'new_item' }}</h1>
+    </div>
+    <div class="modal-body">
+      <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</uib-alert>
+      <div class="panel panel-default bg-light">
+        <div class="panel-body">
+          <form name="newItemForm" class="form-horizontal" ng-keydown="newItemForm.$valid && $event.which == 13 && sendReset()">
+            <div class="form-group" ng-class="">
+              <div class="col-sm-12">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-cart-plus"></i></span>
+                  <input type="text"
+                         name="new_item_name"
+                         class="form-control"
+			 ng-model="new_item_name"
+                         required="required"
+                         placeholder="{{ 'new_item_name' | translate }}" />
+                </div>
+              </div>
+            </div>
+	    <div class="form-group" ng-class="">
+              <div class="col-sm-12">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-barcode"></i></span>
+                  <input type="text"
+                         name="new_item_barcode"
+                         class="form-control"
+			 ng-model="new_item_barcode"
+                         required="required"
+                         placeholder="{{ 'item_barcode' | translate }}" />
+                </div>
+              </div>
+            </div>
+	    <hr>
+	    <div class="form-group">
+              <div class="col-sm-12">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-industry"></i></span>
+                  <input type="text"
+                         name="new_item_maker"
+                         class="form-control"
+			 ng-model="new_item_maker"
+                         required="required"
+                         placeholder="{{ 'new_item_maker' | translate }}" />
+                </div>
+              </div>
+            </div>
+	    <div class="form-group" ng-class="{'has-error': emailError}">
+              <div class="col-sm-12">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                  <input type="email"
+                         name="new_item_maker_email_address"
+                         class="form-control"
+                         ng-model="new_item_maker_email_address"
+                         required="required"
+                         ng-blur="emailError = !!newItemForm.new_item_maker_email_address.$error.email"
+                         ng-focus="emailError = false"
+                         placeholder="{{ 'new_item_maker_email_address' | translate }}" />
+                </div>
+              </div>
+            </div>
+	    <div class="form-group">
+              <div class="col-sm-12">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-street-view"></i></span>
+                  <input type="text"
+                         name="new_item_postal_address_maker"
+                         class="form-control"
+			 ng-model="new_item_postal_address_maker"
+                         required="required"
+                         placeholder="{{ 'new_item_postal_address_maker' | translate }}" />
+                </div>
+              </div>
+            </div>
+	   <div class="form-group" ng-class="{'has-error': phoneError}">
+              <div class="col-sm-12">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-phone"></i></span>
+                  <input type="tel"
+			 pattern="[0-9]{10}"
+                         name="new_item_phone_number_maker"
+                         class="form-control"
+			 ng-model="new_item_phone_number_maker"
+                         required="required"
+			 ng-blur="phoneError = !!newItemForm.new_item_phone_number_maker.$error.phone"
+                         ng-focus="phoneError = false"
+                         placeholder="{{ 'new_item_phone_number_maker' | translate }}" />
+                </div>
+              </div>
+            </div>
+           <div class="form-group" ng-class="">
+              <div class="col-sm-12">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-firefox"></i></span>
+                  <input type="url"
+                         name="new_item_url_maker"
+			 pattern="https://.*" 
+			 size="30"
+                         class="form-control"
+			 ng-model="new_item_url_maker"
+                         required="required"
+                         placeholder="{{ 'new_item_url_maker' | translate }}" />
+                </div>
+              </div>
+            </div>
+	    <hr>
+	    <div class="form-group">
+              <div class="col-sm-12">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-industry"></i></span>
+                  <input type="text"
+                         name="new_item_provider"
+                         class="form-control"
+			 ng-model="new_item_provider"
+                         required="required"
+                         placeholder="{{ 'new_item_provider' | translate }}" />
+                </div>
+              </div>
+            </div>
+	    <div class="form-group" ng-class="{'has-error': emailError}">
+              <div class="col-sm-12">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                  <input type="email"
+                         name="new_item_provider_email_address"
+                         class="form-control"
+                         ng-model="new_item_provider_email_address"
+                         required="required"
+                         ng-blur="emailError = !!newItemForm.new_item_provider_email_address.$error.email"
+                         ng-focus="emailError = false"
+                         placeholder="{{ 'new_item_provider_email_address' | translate }}" />
+                </div>
+              </div>
+            </div>
+	    <div class="form-group">
+              <div class="col-sm-12">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-street-view"></i></span>
+                  <input type="text"
+                         name="new_item_postal_address_provider"
+			 ng-model="new_item_postal_address_provider"
+                         class="form-control"
+                         required="required"
+                         placeholder="{{ 'new_item_postal_address_provider' | translate }}" />
+                </div>
+              </div>
+            </div>
+	   <div class="form-group" ng-class="{'has-error': phoneError}">
+              <div class="col-sm-12">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-phone"></i></span>
+                  <input type="tel"
+			 pattern="[0-9]{10}"
+                         name="new_item_phone_number_provider"
+                         class="form-control"
+			 ng-model="new_item_phone_number_provider"
+                         required="required"
+			 ng-blur="phoneError = !!newItemForm.new_item_phone_number_provider.$error.phone"
+                         ng-focus="phoneError = false"
+                         placeholder="{{ 'new_item_phone_number_provider' | translate }}" />
+                </div>
+              </div>
+            </div>
+           <div class="form-group" ng-class="">
+              <div class="col-sm-12">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-firefox"></i></span>
+                  <input type="url"
+                         name="new_item_url_provider"
+			 pattern="https://.*" 
+			 size="30"
+                         class="form-control"
+			 ng-model="new_item_url_provider"
+                         required="required"
+                         placeholder="{{ 'new_item_url_provider' | translate }}" />
+                </div>
+              </div>
+            </div>
+          </form>
+
+        </div>
+        <div class="panel-footer no-padder">
+          <button class="btn btn-valid btn-warning btn-block p-l btn-lg text-u-c r-b" ng-click="registerANewItem()" ng-disabled="newItemForm.$invalid" translate>{{ 'register_the_new_item' }}</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+

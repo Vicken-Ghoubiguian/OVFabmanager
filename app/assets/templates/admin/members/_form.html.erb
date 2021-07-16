@@ -1,0 +1,44 @@
+<div class="form-group" ng-class="{'has-error': userForm['user[group_id]'].$dirty && userForm['user[group_id]'].$invalid}">
+  <label for="user_group_id" class="col-sm-3 control-label">
+    <span translate>{{ 'group' }}</span>
+    <span class="exponent"><i class="fa fa-asterisk" aria-hidden="true"></i></span>
+  </label>
+  <div class="col-sm-9">
+    <select ng-model="user.group_id" ng-disabled="user.subscribed_plan" class="form-control" name="user[group_id]" id="user_group_id" ng-options="g.id as g.name for g in groups" required>
+    </select>
+    <input type="hidden" name="user[group_id]" ng-value="user.group_id" />
+    <span class="help-block" ng-show="userForm['user[group_id]'].$dirty && userForm['user[group_id]'].$error.required" translate>{{ 'group_is_required' }}</span>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-sm-2 control-label" translate>{{ 'trainings' }}</label>
+  <div class="col-sm-10">
+    <input type="hidden" name="user[statistic_profile_attributes][training_ids][]" value="" />
+    <ui-select multiple ng-model="user.training_ids" class="form-control">
+        <ui-select-match>
+            <span ng-bind="$item.name"></span>
+            <input type="hidden" name="user[statistic_profile_attributes][training_ids][]" value="{{$item.id}}" />
+        </ui-select-match>
+        <ui-select-choices ui-disable-choice="t.disabled" repeat="t.id as t in (trainings | filter: $select.search)">
+            <span ng-bind-html="t.name | highlight: $select.search"></span>
+        </ui-select-choices>
+    </ui-select>
+  </div>
+</div>
+
+<div class="form-group">
+    <label class="col-sm-2 control-label" translate>{{ 'tags' }}</label>
+    <div class="col-sm-10">
+        <input type="hidden" name="user[tag_ids][]" value="" />
+        <ui-select multiple ng-model="user.tag_ids" name="user[tag_ids][]" class="form-control">
+            <ui-select-match>
+                <span ng-bind="$item.name"></span>
+                <input type="hidden" name="user[tag_ids][]" value="{{$item.id}}" />
+            </ui-select-match>
+            <ui-select-choices repeat="t.id as t in (tags | filter: $select.search)">
+                <span ng-bind-html="t.name | highlight: $select.search"></span>
+            </ui-select-choices>
+        </ui-select>
+    </div>
+</div>

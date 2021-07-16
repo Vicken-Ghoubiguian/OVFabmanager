@@ -1,0 +1,47 @@
+select, select:invalid {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: url("http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png") white no-repeat 96% !important; 
+}
+
+select::-ms-expand { display: none; }
+
+select:invalid {
+  color: gray;  
+}
+
+.add_items_fa {
+  color: #608da1;
+}
+
+.add_items_input:placeholder-shown {
+  color: #608da1;
+}
+
+.delete_items_fa {
+  color: #c5007b;
+}
+
+.add_items_input::placeholder {
+  color: #608da1;
+}
+
+.delete_items_input::placeholder {
+  color: #c5007b;
+}
+
+.textzone:empty:not(:focus):before{ content:attr(data-placeholder); color: gray; }
+
+.textzone {
+    -moz-appearance: textfield-multiline;
+    -webkit-appearance: textarea;
+    border-radius: 10px;
+    border: 1px solid gray;
+    font: medium -moz-fixed;
+    font: -webkit-small-control;
+    height: 350px;
+    overflow: auto;
+    padding: 2px;
+    width: 1538px;
+}

@@ -1,0 +1,63 @@
+version: '2'
+services:
+  fabmanager:
+    image: sleede/fab-manager
+    environment:
+      RAILS_ENV: production
+      RACK_ENV: production
+    env_file:
+      - ${PWD}/config/env
+    volumes:
+      - ${PWD}/public/assets:/usr/src/app/public/assets
+      - ${PWD}/public/uploads:/usr/src/app/public/uploads
+      - ${PWD}/invoices:/usr/src/app/invoices
+      - ${PWD}/exports:/usr/src/app/exports
+      - ${PWD}/imports:/usr/src/app/imports
+      - ${PWD}/log:/var/log/supervisor
+      - ${PWD}/plugins:/usr/src/app/plugins
+      - ${PWD}/accounting:/usr/src/app/accounting
+    depends_on:
+      - postgres
+      - redis
+      - elasticsearch
+    restart: always
+
+  postgres:
+    image: postgres:9.6
+    volumes:
+      - ${PWD}/postgresql:/var/lib/postgresql/data
+    restart: always
+
+  elasticsearch:
+    image: elasticsearch:5.6
+    environment:
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - ${PWD}/elasticsearch/config:/usr/share/elasticsearch/config
+      - ${PWD}/elasticsearch:/usr/share/elasticsearch/data
+    restart: always
+
+  redis:
+    image: redis:3.0
+    volumes:
+      - ${PWD}/redis:/data
+    restart: always
+
+  nginx:
+    image: nginx:1.9
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ${PWD}/config/nginx:/etc/nginx/conf.d
+      - ${PWD}/letsencrypt/etc:/etc/letsencrypt
+      - ${PWD}/log:/var/log/nginx
+    volumes_from:
+      - fabmanager:ro
+    links:
+      - fabmanager:fabmanager
+    restart: always

@@ -1,0 +1,348 @@
+
+setting_1:
+  id: 1
+  name: about_body
+  created_at: 2016-04-04 14:11:34.559256000 Z
+  updated_at: 2016-04-04 14:11:34.559256000 Z
+
+setting_2:
+  id: 2
+  name: about_title
+  created_at: 2016-04-04 14:11:34.565164000 Z
+  updated_at: 2016-04-04 14:11:34.565164000 Z
+
+setting_3:
+  id: 3
+  name: about_contacts
+  created_at: 2016-04-04 14:11:34.569316000 Z
+  updated_at: 2016-04-04 14:11:34.569316000 Z
+
+setting_4:
+  id: 4
+  name: twitter_name
+  created_at: 2016-04-04 14:11:34.572468000 Z
+  updated_at: 2016-04-04 14:11:34.572468000 Z
+
+setting_5:
+  id: 5
+  name: machine_explications_alert
+  created_at: 2016-04-04 14:11:34.578108000 Z
+  updated_at: 2016-04-04 14:11:34.578108000 Z
+
+setting_6:
+  id: 6
+  name: training_explications_alert
+  created_at: 2016-04-04 14:11:34.584331000 Z
+  updated_at: 2016-04-04 14:11:34.584331000 Z
+
+setting_7:
+  id: 7
+  name: subscription_explications_alert
+  created_at: 2016-04-04 14:11:34.588478000 Z
+  updated_at: 2016-04-04 14:11:34.588478000 Z
+
+setting_9:
+  id: 9
+  name: invoice_logo
+  created_at: 2016-04-04 14:11:34.596760000 Z
+  updated_at: 2016-04-04 14:11:34.596760000 Z
+
+setting_10:
+  id: 10
+  name: invoice_reference
+  created_at: 2016-04-04 14:11:34.603733000 Z
+  updated_at: 2016-04-04 14:11:34.603733000 Z
+
+setting_11:
+  id: 11
+  name: invoice_code-active
+  created_at: 2016-04-04 14:11:34.607174000 Z
+  updated_at: 2016-04-04 14:11:34.607174000 Z
+
+setting_12:
+  id: 12
+  name: invoice_code-value
+  created_at: 2016-04-04 14:11:34.610103000 Z
+  updated_at: 2016-04-04 14:11:34.610103000 Z
+
+setting_13:
+  id: 13
+  name: invoice_order-nb
+  created_at: 2016-04-04 14:11:34.615671000 Z
+  updated_at: 2016-04-04 14:11:34.615671000 Z
+
+setting_14:
+  id: 14
+  name: invoice_VAT-active
+  created_at: 2016-04-04 14:11:34.618886000 Z
+  updated_at: 2016-04-04 14:11:34.618886000 Z
+
+setting_15:
+  id: 15
+  name: invoice_VAT-rate
+  created_at: 2016-04-04 14:11:34.625154000 Z
+  updated_at: 2016-04-04 14:11:34.625154000 Z
+
+setting_16:
+  id: 16
+  name: invoice_text
+  created_at: 2016-04-04 14:11:34.632653000 Z
+  updated_at: 2016-04-04 14:11:34.632653000 Z
+
+setting_17:
+  id: 17
+  name: invoice_legals
+  created_at: 2016-04-04 14:11:34.636940000 Z
+  updated_at: 2016-04-04 14:11:34.636940000 Z
+
+setting_18:
+  id: 18
+  name: booking_window_start
+  created_at: 2016-04-04 14:11:34.639995000 Z
+  updated_at: 2016-04-04 14:11:34.639995000 Z
+
+setting_19:
+  id: 19
+  name: booking_window_end
+  created_at: 2016-04-04 14:11:34.643667000 Z
+  updated_at: 2016-04-04 14:11:34.643667000 Z
+
+setting_20:
+  id: 20
+  name: booking_move_enable
+  created_at: 2016-04-04 14:11:34.647950000 Z
+  updated_at: 2016-04-04 14:11:34.647950000 Z
+
+setting_21:
+  id: 21
+  name: booking_move_delay
+  created_at: 2016-04-04 14:11:34.650611000 Z
+  updated_at: 2016-04-04 14:11:34.650611000 Z
+
+setting_22:
+  id: 22
+  name: booking_cancel_enable
+  created_at: 2016-04-04 14:11:34.653441000 Z
+  updated_at: 2016-04-04 14:11:34.653441000 Z
+
+setting_23:
+  id: 23
+  name: booking_cancel_delay
+  created_at: 2016-04-04 14:11:34.655971000 Z
+  updated_at: 2016-04-04 14:11:34.655971000 Z
+
+setting_24:
+  id: 24
+  name: main_color
+  created_at: 2016-04-04 14:11:34.658780000 Z
+  updated_at: 2016-04-04 14:11:34.658780000 Z
+
+setting_25:
+  id: 25
+  name: secondary_color
+  created_at: 2016-04-04 14:11:34.666698000 Z
+  updated_at: 2016-04-04 14:11:34.666698000 Z
+
+setting_26:
+  id: 26
+  name: training_information_message
+  created_at: 2016-04-04 14:11:34.717053000 Z
+  updated_at: 2016-04-04 14:11:34.717053000 Z
+
+setting_27:
+  id: 27
+  name: fablab_name
+  created_at: 2016-04-04 14:11:34.724770000 Z
+  updated_at: 2016-04-04 14:11:34.724770000 Z
+
+setting_28:
+  id: 28
+  name: name_genre
+  created_at: 2016-04-04 14:11:34.728465000 Z
+  updated_at: 2016-04-04 14:11:34.728465000 Z
+
+setting_29:
+  id: 29
+  name: home_blogpost
+  created_at: 2017-09-18 10:26:42.852150000 Z
+  updated_at: 2017-09-18 10:26:42.852150000 Z
+
+setting_30:
+  id: 30
+  name: visibility_yearly
+  created_at: 2017-09-18 10:26:42.852150000 Z
+  updated_at: 2017-09-18 10:26:42.852150000 Z
+
+setting_31:
+  id: 31
+  name: visibility_others
+  created_at: 2017-09-18 10:27:42.846510000 Z
+  updated_at: 2017-09-18 10:27:42.846510000 Z
+
+setting_32:
+  id: 32
+  name: display_name_enable
+  created_at: 2018-07-24 11:45:31.512710000 Z
+  updated_at: 2018-07-24 11:45:31.512710000 Z
+
+setting_33:
+  id: 33
+  name: machines_sort_by
+  created_at: 2018-09-18 15:09:48.176240000 Z
+  updated_at: 2018-09-18 15:09:48.176240000 Z
+
+setting_34:
+  id: 34
+  name: about_link_text
+  created_at: 2019-06-12 13:21:12.156100000 Z
+  updated_at: 2019-06-12 13:21:12.156100000 Z
+
+setting_35:
+  id: 35
+  name: event_reduced_amount_alert
+  created_at: 2019-06-12 13:22:06.516570000 Z
+  updated_at: 2019-06-12 13:22:06.516570000 Z
+
+setting_36:
+  id: 36
+  name: reminder_enable
+  created_at: 2019-06-12 13:23:34.641680000 Z
+  updated_at: 2019-06-12 13:23:34.641680000 Z
+
+setting_37:
+  id: 37
+  name: reminder_delay
+  created_at: 2019-06-12 13:24:01.065150000 Z
+  updated_at: 2019-06-12 13:24:01.065150000 Z
+
+setting_38:
+  id: 38
+  name: privacy_draft
+  created_at: 2019-06-12 13:25:08.125640000 Z
+  updated_at: 2019-06-12 13:25:08.125640000 Z
+
+setting_39:
+  id: 39
+  name: accounting_journal_code
+  created_at: 2019-09-20 11:02:32.125400000 Z
+  updated_at: 2019-09-20 11:02:32.125400000 Z
+
+setting_40:
+  id: 40
+  name: accounting_card_client_code
+  created_at: 2019-09-20 11:02:32.125400000 Z
+  updated_at: 2019-09-20 11:02:32.125400000 Z
+
+setting_41:
+  id: 41
+  name: accounting_card_client_label
+  created_at: 2019-09-20 11:02:32.125400000 Z
+  updated_at: 2019-09-20 11:02:32.125400000 Z
+
+setting_42:
+  id: 42
+  name: accounting_wallet_client_code
+  created_at: 2019-09-20 11:02:32.125400000 Z
+  updated_at: 2019-09-20 11:02:32.125400000 Z
+
+setting_43:
+  id: 43
+  name: accounting_wallet_client_label
+  created_at: 2019-09-20 11:02:32.125400000 Z
+  updated_at: 2019-09-20 11:02:32.125400000 Z
+
+setting_44:
+  id: 44
+  name: accounting_other_client_code
+  created_at: 2019-09-20 11:02:32.125400000 Z
+  updated_at: 2019-09-20 11:02:32.125400000 Z
+
+setting_45:
+  id: 45
+  name: accounting_other_client_label
+  created_at: 2019-09-20 11:02:32.125400000 Z
+  updated_at: 2019-09-20 11:02:32.125400000 Z
+
+setting_46:
+  id: 46
+  name: accounting_wallet_code
+  created_at: 2019-09-20 11:02:32.125400000 Z
+  updated_at: 2019-09-20 11:02:32.125400000 Z
+
+setting_47:
+  id: 47
+  name: accounting_wallet_label
+  created_at: 2019-09-20 11:02:32.125400000 Z
+  updated_at: 2019-09-20 11:02:32.125400000 Z
+
+setting_48:
+  id: 48
+  name: accounting_VAT_code
+  created_at: 2019-09-20 11:02:32.125400000 Z
+  updated_at: 2019-09-20 11:02:32.125400000 Z
+
+setting_49:
+  id: 49
+  name: accounting_VAT_label
+  created_at: 2019-09-20 11:02:32.125400000 Z
+  updated_at: 2019-09-20 11:02:32.125400000 Z
+
+setting_50:
+  id: 50
+  name: accounting_subscription_code
+  created_at: 2019-09-20 11:02:32.125400000 Z
+  updated_at: 2019-09-20 11:02:32.125400000 Z
+
+setting_51:
+  id: 51
+  name: accounting_subscription_label
+  created_at: 2019-09-20 11:02:32.125400000 Z
+  updated_at: 2019-09-20 11:02:32.125400000 Z
+
+setting_52:
+  id: 52
+  name: accounting_Machine_label
+  created_at: 2019-09-20 11:02:32.125400000 Z
+  updated_at: 2019-09-20 11:02:32.125400000 Z
+
+setting_53:
+  id: 53
+  name: accounting_Training_code
+  created_at: 2019-09-20 11:02:32.125400000 Z
+  updated_at: 2019-09-20 11:02:32.125400000 Z
+
+setting_54:
+  id: 54
+  name: accounting_Training_label
+  created_at: 2019-09-20 11:02:32.125400000 Z
+  updated_at: 2019-09-20 11:02:32.125400000 Z
+
+setting_55:
+  id: 55
+  name: accounting_Event_code
+  created_at: 2019-09-20 11:02:32.125400000 Z
+  updated_at: 2019-09-20 11:02:32.125400000 Z
+
+setting_56:
+  id: 56
+  name: accounting_Event_label
+  created_at: 2019-09-20 11:02:32.125400000 Z
+  updated_at: 2019-09-20 11:02:32.125400000 Z
+
+setting_57:
+  id: 57
+  name: accounting_Space_code
+  created_at: 2019-09-20 11:02:32.125400000 Z
+  updated_at: 2019-09-20 11:02:32.125400000 Z
+
+setting_58:
+  id: 58
+  name: accounting_Machine_code
+  created_at: 2019-09-20 11:02:32.125400000 Z
+  updated_at: 2019-09-20 11:02:32.125400000 Z
+
+setting_59:
+  id: 59
+  name: accounting_Space_label
+  created_at: 2019-09-20 11:02:32.125400000 Z
+  updated_at: 2019-09-20 11:02:32.125400000 Z

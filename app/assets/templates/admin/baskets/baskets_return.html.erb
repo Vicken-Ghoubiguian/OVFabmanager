@@ -1,0 +1,64 @@
+<div class="" id="saveStockModal">
+    <div class="modal-body">
+      <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</uib-alert>
+
+      <div class="panel panel-default bg-light">
+        <div class="panel-body">
+	  <form name="returnBasketsForm" class="form-horizontal" ng-controller="BasketsController">
+            <div class="form-group">
+              <div class="col-sm-12">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-user"></i></span>
+		  <select name="client_name_for_return"
+                         class="form-control"
+			 ng-model="client_name_for_return"
+                         required="required">
+			<option value="" disabled selected hidden>Client</option>
+			<option value="Cartman">E. Cartman</option>
+		  </select>
+                </div>
+		<a href="#" ng-click="custom_card_func($event)" class="text-sm">{{ 'customer_card'|translate  }}</a>
+              </div>
+            </div>
+	    <!--<div class="form-group">
+              <div class="col-sm-5">
+                <div class="input-group">
+                 <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                  <input type="text" ng-model="items_barcode" class="form-control" placeholder="{{ 'items_barcode' | translate }}">
+                </div>
+                <div class="input-group">
+
+                </div>
+              </div>
+            </div>-->
+	    <div class="form-group">
+	       <div class="col-sm-6">
+                <div class="input-group">
+                  <span class="input-group-addon add_items_fa"><i class="fa fa-plus"></i></span>
+                  <input type="text" class="form-control add_items_input" ng-model="add_items_barcode_for_return" id="add_items_barcode_for_return" ng-blur="addItemForReturn()" placeholder="{{ 'items_barcode' | translate }}">
+                </div>
+               </div>
+	       <div class="col-sm-6">
+                <div class="input-group">
+		  <span class="input-group-addon delete_items_fa"><i class="fa fa-minus"></i></span>
+		  <input type="text" class="form-control delete_items_input" ng-model="delete_items_barcode_for_return" id="delete_items_barcode_for_return" ng-blur="deleteItemForReturn()" placeholder="{{ 'items_barcode' | translate }}">
+                </div>
+               </div>
+	    </div>
+	    <div class="form-group">
+	       <div class="col-sm-12">
+		  <div class="input-group">
+		     <div>
+		       <div class="textzone" ng-init="items_list_for_return=''" ng-bind-html="items_list_for_return" data-placeholder="{{ 'items_list_in_basket' | translate }}"></div>
+		     </div>
+		  </div>
+		</div>
+	    </div>
+	    <div class="panel-footer no-padder">
+                   <button class="btn btn-valid btn-warning btn-block p-l btn-lg text-u-c r-b" ng-click="returnBaskets()" ng-disabled="returnBasketsForm.$invalid" translate>{{ 'confirm' }}</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>

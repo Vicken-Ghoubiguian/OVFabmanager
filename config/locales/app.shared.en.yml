@@ -1,0 +1,469 @@
+en:
+  app:
+    shared:
+      buttons:
+        # translations of common buttons
+        confirm_changes: "Confirm changes"
+        consult: "Consult"
+        edit: "Edit"
+        change: "Change"
+        delete: "Delete"
+        browse: "Browse"
+        cancel: "Cancel"
+        close: "Close"
+        clear: "Clear"
+        today: "Today"
+        confirm: "Confirm"
+        save: "Save"
+        "yes": "Yes"
+        "no": "No"
+        apply: "Apply"
+
+      elements:
+        # various translations used many times in the application
+        group: "Group"
+        subscription: "Subscription"
+        trainings: "Trainings"
+        no_trainings: "No trainings"
+        confirmation_required: "Confirmation required"
+        description: "Description"
+        machines: "Machines"
+        events: "Events"
+        materials: "Materials"
+        date: "Date"
+        price: "Price"
+        download_the_invoice: "Download the invoice"
+        download_the_credit_note: "Download the credit note"
+        no_invoices_for_now: "No invoices for now."
+        email_address: "Email address"
+        user: "User"
+        pseudonym: "Pseudonym"
+        all_day: "All day"
+        reservation_was_successfully_cancelled: "Reservation was successfully cancelled."
+        title: "Title"
+        total_: "TOTAL :"
+        full_price_: "Full price:"
+        rough_draft: "Rough draft"
+        machines_and_materials: "Machines and materials"
+        collaborators: "Collaborators"
+        summary: "Summary"
+        you_ve_just_selected_a_: "You've just selected a"  # you_ve_just_selected_a_ + _subscription
+        _subscription: "subscription"
+        confirm_and_pay: "Confirm and pay"
+        your_invoice_will_be_available_soon_from_your_: "Your invoice will be available soon form your"
+        add_an_event: "Add an event"
+        load_the_next_events: "Load the next events..."
+        no_passed_events: "No passed events"
+        dates: "Dates:"
+        thank_you_your_payment_has_been_successfully_registered: "Thank you. Your payment has been successfully registered !"
+        surname: "Surname"
+        first_name: "First Name"
+        address: "Address"
+        interests: "Interests"
+        CAD_softwares_mastered: "CAD Softwares mastered"
+        name: "Name"
+        step_N: "Step {{INDEX}}"  # angular interpolation
+        themes: "Themes"
+        tags: "Tags"
+        technical_specifications: "Technical specifications"
+        online_payment: "Online payment"
+        type: "Type"
+        partner: "Partner"
+        standard: "Standard"
+        year: "Year"
+        month: "Month"
+        subscription_price: "Subscription price"
+        model: "Model"
+        from_date: "From" # context: date. eg: "from 01/01 to 01/05"
+        from_time: "From" # context: time. eg. "from 18:00 to 21:00"
+        to_date: "to" # context: date. eg: "from 01/01 to 01/05"
+        to_time: "to"  # context: time. eg. "from 18:00 to 21:00"
+        or: "or"
+        change_my_data: "Change my data"
+        sync_my_profile: "Sync my profile"
+        once_your_data_are_up_to_date_: "Once your data are up to date,"
+        _click_on_the_synchronization_button_opposite_: "click on the synchronization button opposite"
+        _disconnect_then_reconnect_: "disconnect then reconnect"
+        _for_your_changes_to_take_effect: "for your changes to take effect."
+        add_a_project: "Add a project"
+        illustration: "Illustration"
+        add_an_illustration: "Add an illustration."
+        book: "Book"
+        description_is_required: "Description is required."
+        name_is_required: "Name is required."
+        all_themes: "All themes"
+        filter: 'Filter'
+        confirm_payment_of_html: "{ROLE, select, admin{Payment on site} other{Pay}}: {AMOUNT}"  # messageFormat interpolation (context: confirm my payment of $20.00)
+        export_is_running_you_ll_be_notified_when_its_ready: "Export is running. You'll be notified when it's ready."
+        share_on_facebook: "Share on Facebook"
+        share_on_twitter: "Share on Twitter"
+        incomplete_profile: "Incomplete profile"
+        unlimited: "Unlimited"
+        payment_card_error: "A problem occurred with your payment card:"
+        online_payment_disabled: "Online payment is not available. Please contact the Fablab reception directly."
+        unexpected_error_occurred: "An unexpected error occurred"
+
+      messages:
+        you_will_lose_any_unsaved_modification_if_you_quit_this_page: "You will lose any unsaved modification if you quit this page"
+        you_will_lose_any_unsaved_modification_if_you_reload_this_page: "You will lose any unsaved modification if you reload this page"
+
+      user:
+        # user edition form
+        add_an_avatar: "Add an avatar"
+        pseudonym: "Pseudonym"
+        email_address_is_required: "E-mail address is required."
+        change_password: "Change password"
+        new_password: "New password"
+        confirmation_of_new_password: "Confirmation of new password"
+        confirmation_of_password_is_required: "Confirmation of password is required."
+        confirmation_of_password_is_too_short: "Confirmation of password is too short (minimum 8 characters)."
+        confirmation_mismatch_with_password: "Confirmation mismatch with password."
+        organization_name: "Organization name"
+        organization_address: "Organization address"
+        date_of_birth: "Date of birth"
+        date_of_birth_is_required: "Date of birth is required."
+        website: "Website"
+        job: "Occupation"
+
+      project:
+        # project edition form
+        illustration: "Illustration"
+        add_an_illustration: "Add an illustration"
+        CAD_file: "CAD file"
+        allowed_extensions: "Allowed extensions:"
+        add_a_new_file: "Add a new file"
+        steps: "Steps"
+        step_title: "Step title"
+        add_a_picture: "Add a picture"
+        change_the_picture: "Change the picture"
+        delete_the_step: "Delete the step"
+        do_you_really_want_to_delete_this_step: "Do you really want to delete this step?"
+        add_a_new_step: "Add a new step"
+        publish_your_project: "Publish your project"
+        employed_materials: "Employed materials"
+        employed_machines: "Employed machines"
+        creative_commons_licences: "Creative Commons licences"
+
+      machine:
+        # machine edition form
+        machine_form:
+          name: "Name"
+          name_is_required: "Name is required."
+          illustration: "Visual"
+          add_an_illustration: "Add a visual"
+          description: "Description"
+          description_is_required: "Description is required."
+          technical_specifications: "Technical specifications"
+          technical_specifications_are_required: "Technical specifications are required."
+          attached_files_pdf: "Attached files (pdf)"
+          attach_a_file: "Attach a file"
+          add_an_attachment: "Add an attachment"
+          disable_machine: "Disable machine"
+          validate_your_machine: "Validate your machine"
+
+      plan_subscribe:
+        # frame to select a plan to subscribe
+        subscribe_online: "subscribe online"
+        do_not_subscribe: "do not subscribe"
+
+      member_select:
+        # admin: choose a member to interact with
+        select_a_member: "Select a member"
+        start_typing: "Start typing..."
+        please_select_a_member_first: "Please select a member first"
+
+      stripe:
+        # stripe payment modal
+        i_have_read_and_accept_: "I have read, and accept"
+        _the_general_terms_and_conditions: "the general terms and conditions."
+        credit_amount_for_pay_reservation: "{{amount}} {{currency}} remains to be paid to confirm your reservation"
+        client_credit_amount_for_pay_reservation: "{{amount}} {{currency}} remains to be paid to confirm reservation of client"
+
+      valid_reservation_modal:
+        # dialog of on site payment for reservations
+        booking_confirmation: "Booking confirmation"
+        here_is_the_summary_of_the_slots_to_book_for_the_current_user: "Here is the summary of the slots to book for the current user:"
+
+      event:
+        # event edition form
+        title_is_required: "Title is required."
+        matching_visual: "Matching visual"
+        choose_a_picture: "Choose a picture"
+        attachments: "Attachments"
+        add_a_new_file: "Add a new file"
+        event_type: "Event type"
+        dates_and_opening_hours: "Dates and opening hours"
+        all_day: "All day"
+        start_date: "Start date"
+        end_date: "End date"
+        start_time: "Start time"
+        end_time: "End time"
+        recurrence: "Recurrence"
+        _and_ends_on: "and ends on"
+        prices_and_availabilities: "Prices and availabilities"
+        standard_rate: "Standard rate"
+        0_equal_free: "0 = free"
+        tickets_available: "Tickets available"
+        event_theme: "Event theme"
+        age_range: "Age range"
+
+      plan:
+        # subscription plan edition form
+        plan_form:
+          general_information: "General information"
+          name: "Name"
+          name_is_required: "Name is required"
+          name_length_must_be_less_than_24_characters: "Name length must be less than 24 characters."
+          type: "Type"
+          type_is_required: "Type is required."
+          group: "Group"
+          transversal_all_groups: "Transversal (all groups)"
+          group_is_required: "Group is required."
+          number_of_periods: "Number of periods"
+          number_of_periods_is_required: "Number of periods is required."
+          period: "Period"
+          year: "Year"
+          month: "Month"
+          week: "Week"
+          period_is_required: "Period is required."
+          subscription_price: "Subscription price"
+          price_is_required: "Price is required."
+          visual_prominence_of_the_subscription: "Visual prominence of the subscription"
+          on_the_subscriptions_page_the_most_prominent_subscriptions_will_be_placed_at_the_top_of_the_list: "On the subscriptions page, the most prominent subscriptions will be placed at the top of the list."
+          an_evelated_number_means_a_higher_prominence: "An elevated number means a higher prominence."
+          rolling_subscription: "Rolling subscription?"
+          a_rolling_subscription_will_begin_the_day_of_the_first_training: "A rolling subscription will begin the day of the first trainings."
+          otherwise_it_will_begin_as_soon_as_it_is_bought: "Otherwise, it will begin as soon as it is bought."
+          information_sheet: "Information sheet"
+          attach_an_information_sheet: "Attach an information sheet"
+          notified_partner: "Notified partner"
+          new_user: "New user ..."
+          as_part_of_a_partner_subscription_some_notifications_may_be_sent_to_this_user: "As part of a partner subscription, some notifications may be sent to this user."
+          new_partner: "New partner"
+          email_address_is_required: "Email address is required."
+          disabled: "Disable subscription"
+          disable_plan_will_not_unsubscribe_users: "Beware: disabling this plan won't unsubscribe users having active subscriptions with it."
+
+      trainings:
+        # training edition form
+        trainings_form:
+          name: "Name"
+          name_is_required: "Name is required."
+          illustration: "Illustration"
+          add_an_illustration: "Add an illustration"
+          description: "Description"
+          description_is_required: "Description is required."
+          add_a_new_training: "Add a new training"
+          validate_your_training: "Validate your training"
+          associated_machines: "Associated machines"
+          number_of_tickets: "Number of tickets"
+          public_page: "Show in training lists"
+          disable_training: "Disable the training"
+
+      user_admin:
+        # partial form to edit/create an user (admin view)
+        user_profile: "Profil utilisateur"
+        warning_incomplete_user_profile_probably_imported_from_sso: "Warning: This user's profile is incomplete. As \"single sign-on\" (SSO) authentication is currently enabled, it may probably be an imported but non merged account. Do not modify it unless you know what your doing."
+        group: "Group"
+        group_is_required: "Group is required"
+        trainings: "Trainings"
+
+      authentication:
+        # partial form to edit/create an authentication provider (SSO)
+        provider_name_is_required: "Provider name is required."
+        authentication_type: "Authentication type"
+        authentication_type_is_required: "Authentication type is required."
+        data_mapping: "Data mapping"
+        expected_data_type: "Expected data type"
+        input_format: "Input format"
+        mappings: "Mappings"
+
+      oauth2:
+        # edition/creation form of an OAuth2 authentication provider
+        common_url: "Common URL"
+        common_url_is_required: "Common URL is required."
+        provided_url_is_not_a_valid_url: "Provided URL is not a valid URL."
+        authorization_endpoint: "Authorization endpoint"
+        oauth2_authorization_endpoint_is_required: "OAuth 2.0 authorization endpoint is required."
+        provided_endpoint_is_not_valid: "Provided endpoint is not valid."
+        token_acquisition_endpoint: "Token acquisition endpoint"
+        oauth2_token_acquisition_endpoint_is_required: "OAuth 2.0 token acquisition endpoint is required."
+        profil_edition_url: "Profil edition URL"
+        profile_edition_url_is_required: "Profile edition URL is required."
+        client_identifier: "Client identifier"
+        oauth2_client_identifier_is_required: "OAuth 2.0 client identifier is required."
+        obtain_it_when_registering_with_your_provider: "Obtain it when registering with your provider."
+        client_secret: "Client secret"
+        oauth2_client_secret_is_required: "OAuth 2.0 client secret is required."
+        define_the_fields_mapping: "Define the fields mapping"
+        add_a_match: "Add a match"
+        field: "Fiels"
+        api_endpoint_url: "API endpoint URL"
+        api_type: "API type"
+        api_fields: "API fields"
+
+      confirm_modify_slot_modal:
+        # machine/training slot modification modal
+        change_the_slot: "Change the slot"
+        do_you_want_to_change_your_booking_slot_initially_planned_at: "Do you want to change your booking slot, initially planned at:"
+        do_you_want_to_change_NAME_s_booking_slot_initially_planned_at: "Do you want to change {{NAME}}'s booking slot, initially planned at:"  # angular interpolation
+        cancel_this_reservation: "Cancel this reservation"
+        i_want_to_change_date: "I want to change date"
+
+      request_training_modal:
+        # modal introducing that a training is requested before booking a machine
+        to_book_the_MACHINE_you_must_have_completed_the_TRAINING: "To book the \"{{MACHINE}}\" you must have completed the {{TRAINING}}."  # angular interpolation
+        register_for_the_training: "Enroll in the training"
+        i_dont_want_to_register_now: "I don't want to enroll now"
+
+      training_reservation_modal:
+        # modal introducing that a user must wait for his training being validated before booking a machine
+        machine_reservation: "Machine reservation"
+        you_must_wait_for_your_training_is_being_validated_by_the_fablab_team_to_book_this_machine: "You must wait for your training is being validated by the FabLab team to book this machine."
+        your_training_will_occur_: "Your training will occur"
+
+      public_profile:
+        # user public profile
+        last_activity_: "Last activity"
+        _on_: "on"
+        to_come: "to come"
+        approved: "approved"
+        projects: "Projects"
+        no_projects: "No projects"
+        author: "Author"
+        collaborator: "Collaborator"
+        private_profile: "Private profile"
+
+      wallet:
+        # wallet
+        wallet: 'Wallet'
+        your_wallet_amount: 'Your amount available'
+        wallet_amount: 'Amount available'
+        no_transactions_for_now: 'No transactions for now'
+        operation: 'Operation'
+        operator: 'Operator'
+        amount: 'Amount'
+        credit: 'Credit'
+        debit: 'Debit'
+        credit_title: 'Credit wallet'
+        credit_label: 'Set the amount to be credited'
+        confirm_credit_label: 'Confirm the amount to be credited'
+        generate_a_refund_invoice: "Generate a refund invoice"
+        creation_date_for_the_refund: "Creation date for the refund"
+        creation_date_is_required: "Creation date is required."
+        description_optional: "Description (optional):"
+        will_appear_on_the_refund_invoice: "Will appear on the refund invoice."
+        to_credit: 'Credit'
+        wallet_credit_successfully: "Wallet of user is credited successfully."
+        a_problem_occurred_for_wallet_credit: "A problem is occurred while taking the credit of wallet"
+        amount_is_required: "The amount is required"
+        amount_minimum_1: "The amount minimum is 1"
+        amount_confirm_is_required: "The amount confirmation is required"
+        amount_confirm_does_not_match: "The amount confirmation does not match"
+        you_have_amount_in_wallet: "You have {{amount}} {{currency}} in your wallet"
+        client_have_amount_in_wallet: "Client has {{amount}} {{currency}} in wallet"
+        wallet_pay_reservation: "You can pay direct your reservation"
+        client_wallet_pay_reservation: "Client can pay direct reservation"
+        debit_subscription: "Debit by subscription"
+        debit_reservation_training: "Debit by reservation of training"
+        debit_reservation_machine: "Debit by reservation of machine"
+        debit_reservation_event: "Debit by reservation of event"
+        warning_uneditable_credit: "Warning: once validated, the credited amount won't be editable anymore."
+
+      coupon:
+        # promotional coupon (creation/edition form)
+        code: "Code"
+        code_is_required: "Code is required."
+        code_must_be_composed_of_capital_letters_digits_and_or_dashes: "The code must be composed of capital letters, digits and/or dashes."
+        kind_of_coupon: "Kind of coupon"
+        percentage: "Percentage"
+        amount: "Amount"
+        amount_off: "Amount off"
+        percent_off: "Percentage off"
+        percent_off_is_required: "Percentage off is required."
+        percentage_must_be_between_0_and_100: "Percentage must be between 0 and 100."
+        validity_per_user: "Validity per user"
+        once: "Just once"
+        forever: "Each use"
+        validity_per_user_is_required: "Validity per user is required."
+        valid_until: "Valid until (included)"
+        leave_empty_for_no_limit: "Do not specify any limit by leaving the field empty."
+        max_usages: "Maximum usages allowed"
+        max_usages_must_be_equal_or_greater_than_0: "The maximum usages allowed must be greater than 0."
+        enabled: "Active"
+
+      coupon_input:
+        # coupon (input zone for users)
+        i_have_a_coupon: "I have a coupon!"
+        code_: "Code:"
+        the_coupon_has_been_applied_you_get_PERCENT_discount: "The coupon has been applied. You get a {{PERCENT}}% discount."  # angular interpolation
+        the_coupon_has_been_applied_you_get_AMOUNT_CURRENCY: "The coupon has been applied. You get a discount of {{AMOUNT}} {{CURRENCY}}."  # angular interpolation
+        unable_to_apply_the_coupon_because_disabled: "Unable to apply the coupon: this code was disabled."
+        unable_to_apply_the_coupon_because_expired: "Unable to apply the coupon: this code has expired."
+        unable_to_apply_the_coupon_because_sold_out: "Unable to apply the coupon: this code reached its quota."
+        unable_to_apply_the_coupon_because_already_used: "Unable to apply the coupon: you have already used this code once before."
+        unable_to_apply_the_coupon_because_amount_exceeded: "Unable to apply the coupon: the discount exceed the total amount of this purchase."
+        unable_to_apply_the_coupon_because_undefined: "Unable to apply the coupon: an unexpected error occurred, please contact the Fablab's manager."
+        unable_to_apply_the_coupon_because_rejected: "This code does not exists."
+
+      space:
+        # form to create/edit a space
+        space:
+          name: "Name"
+          name_is_required: "Name is required."
+          illustration: "Illustration"
+          add_an_illustration: "Add an illustration"
+          description: "Description"
+          description_is_required: "Description is required."
+          characteristics: "Characteristics"
+          characteristics_are_required: "Characteristics are required."
+          attached_files_pdf: "Attached files (pdf)"
+          attach_a_file: "Attach a file"
+          add_an_attachment: "Add an attachment"
+          default_places: "Default maximum tickets"
+          default_places_is_required: "Default maximum tickets is required."
+          disable_space: "Disable space"
+
+      cart:
+        # module de panier d'achat de réservations
+        cart:
+          summary: "Summary"
+          select_one_or_more_slots_in_the_calendar: "Select one {SINGLE, select, true{slot} other{or more slots}} in the calendar"  # messageFormat interpolation
+          you_ve_just_selected_the_slot: "You've just selected the slot:"
+          datetime_to_time: "{{START_DATETIME}} to {{END_TIME}}"  # angular interpolation, eg: Thursday, September 4 1986 8:30 PM to 10:00 PM
+          cost_of_TYPE: "Cost of {TYPE, select, Machine{a machine hour} Training{the training} other{the element}}"  # messageFormat interpolation
+          offer_this_slot: "Offer this slot"
+          confirm_this_slot: "Confirm this slot"
+          remove_this_slot: "Remove this slot"
+          to_benefit_from_attractive_prices: "To benefit from attractive prices"
+          view_our_subscriptions: "View our subscriptions"
+          or: "or"
+          you_ve_just_selected_a_: "You've just selected a"
+          _subscription: "subscription"
+          cost_of_the_subscription: "Cost of the subscription"
+          confirm_and_pay: "Confirm and pay"
+          you_have_settled_the_following_TYPE: "You have settled the following {TYPE, select, Machine{machine hours} Training{training} other{elements}}:"  # messageFormat interpolation
+          you_have_settled_a_: "You have settled a"
+          total_: "TOTAL :"
+          thank_you_your_payment_has_been_successfully_registered: "Thank you. Your payment has been successfully registered !"
+          your_invoice_will_be_available_soon_from_your_: "Your invoice will be available soon form your"
+          dashboard: "Dashboard"
+          i_want_to_change_the_following_reservation: "I want to change the following reservation:"
+          cancel_my_modification: "Cancel my modification"
+          select_a_new_slot_in_the_calendar: "Select a new slot in the calendar"
+          cancel_my_selection: "Cancel my selection"
+          tags_of_the_original_slot: "Tags of the original slot:"
+          tags_of_the_destination_slot: "Tags of the destination slot:"
+          confirm_my_modification: "Confirm my modification"
+          your_booking_slot_was_successfully_moved_from_: "Your booking slot was successfully moved from"
+          to_date: "to" # context: date. eg: "from 01/01 to 01/05"
+          please_select_a_member_first: "Please select a member first"
+          unable_to_change_the_reservation: "Unable to change the reservation"
+          confirmation_required: "Confirmation required"
+          do_you_really_want_to_cancel_this_reservation: "Do you really want to cancel this reservation?"
+          reservation_was_cancelled_successfully: "Reservation was cancelled successfully."
+          cancellation_failed: "Cancellation failed."
+          confirm_payment_of_html: "{ROLE, select, admin{Payment on site} other{Pay}}: {AMOUNT}"  # messageFormat interpolation (context: confirm my payment of $20.00)
+          a_problem_occurred_during_the_payment_process_please_try_again_later: "A problem occurred during the payment process. Please try again later."
+          none: "None"
+          online_payment_disabled: "Online payment is not available. Please contact the Fablab reception directly."

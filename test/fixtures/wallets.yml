@@ -1,0 +1,27 @@
+wallet_2:
+  invoicing_profile_id: 2
+  amount: 0
+
+wallet_4:
+  invoicing_profile_id: 4
+  amount: 0
+
+wallet_6:
+  invoicing_profile_id: 6
+  amount: 0
+
+wallet_5:
+  invoicing_profile_id: 5
+  amount: 1000
+
+wallet_3:
+  invoicing_profile_id: 3
+  amount: 0
+
+wallet_1:
+  invoicing_profile_id: 1
+  amount: 0
+
+wallet_7:
+  invoicing_profile_id: 7
+  amount: 0

@@ -1,0 +1,37 @@
+<%= render 'notifications_mailer/shared/hello', recipient: @recipient %>
+
+<% if @attached_object.type == 'percent_off' %>
+  <p><%= t('.body.enjoy_a_discount_of_PERCENT_with_code_CODE',
+           PERCENT: @attached_object.percent_off,
+           CODE: @attached_object.code
+         ) %>
+  </p>
+<% else %>
+  <p><%= t('.body.enjoy_a_discount_of_AMOUNT_with_code_CODE',
+           AMOUNT:  number_to_currency(@attached_object.amount_off / 100.00),
+           CODE: @attached_object.code
+         ) %>
+  </p>
+<% end %>
+
+<%
+  # we must tell the user if he can use the code just once or many times (== maximum wasn't specified)
+  usages = 999 # just a number > 1
+  if @attached_object.validity_per_user == 'once'
+    usages = 1
+  else
+    unless @attached_object.max_usages.nil?
+      usages = @attached_object.max_usages
+    end
+  end
+%>
+<p>
+  <%= _t('.body.this_coupon_is_valid_USAGE_times_until_DATE_for_all_your_purchases',
+         {
+             USAGE:  usages,
+             TYPE: @attached_object.type,
+             DATE: @attached_object.valid_until.nil? ? 'NO-DATE' : I18n.l(@attached_object.valid_until.to_date)
+         })
+      # messageFormat
+  %>
+</p>
